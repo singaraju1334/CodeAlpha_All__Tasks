@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alex Smith - Dark Glitter Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  body {
+    margin: 0;
+    background: #0e0e14;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* Glitter animation */
+  @keyframes glitter {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+  }
+
+  header {
+    background: linear-gradient(135deg, #1f1f2e, #141420);
+    padding: 60px 20px 50px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px #7a64ffaa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+    background: linear-gradient(
+      45deg,
+      #f9f9f9,
+      #7a64ff,
+      #c38dff,
+      #7a64ff,
+      #f9f9f9
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glitter 3.5s ease infinite;
+    user-select: none;
+  }
+  header p {
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-style: italic;
+    color: #a0a0c8;
+    letter-spacing: 1.2px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 50px auto 80px;
+    background: #171725;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px #6b54ff88;
+    padding: 50px 60px;
+  }
+
+  section {
+    margin-bottom: 70px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    border-left: 6px solid #7a64ff;
+    padding-left: 18px;
+    margin-bottom: 35px;
+    color: #c38dff;
+    background: linear-gradient(
+      270deg,
+      #7a64ff,
+      #c38dff,
+      #7a64ff
+    );
+    background-size: 400% 400%;
+    animation: glitter 4s ease infinite;
+    user-select: none;
+  }
+
+  #about {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #about img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #7a64ff;
+    box-shadow: 0 0 15px #c38dffcc;
+    object-fit: cover;
+    filter: drop-shadow(0 6px 10px #7a64ffaa);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+  #about img:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 25px #c38dff;
+  }
+  #about p {
+    max-width: 520px;
+    font-size: 1.22rem;
+    line-height: 1.75;
+    color: #bbb;
+    font-weight: 400;
+    text-align: center;
+    flex: 1 1 320px;
+    user-select: text;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+
+  #skills li, #projects li {
+    background: #262636;
+    border-radius: 20px;
+    padding: 18px 25px;
+    box-shadow: 0 0 10px #7a64ff55 inset;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #ddd;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    border: 1.5px solid transparent;
+    transition: box-shadow 0.4s ease, transform 0.3s ease, border-color 0.4s ease;
+  }
+  #skills li:hover, #projects li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #7a64ffcc, 0 0 45px #c38dffcc;
+    border-color: #c38dff;
+    background: linear-gradient(145deg, #3e3e5a, #4e4e6f);
+    color: #f0e9ff;
+  }
+
+  #projects li strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #c38dff;
+  }
+  #projects li p {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  #projects li img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0 8px 25px #7a64ffcc;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    cursor: pointer;
+    filter: brightness(0.85);
+  }
+  #projects li img:hover {
+    transform: scale(1.07);
+    filter: brightness(1);
+  }
+
+  #resume {
+    text-align: center;
+  }
+  #resume a {
+    background: linear-gradient(135deg, #7a64ff, #c38dff);
+    color: white;
+    text-decoration: none;
+    padding: 16px 50px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    border-radius: 50px;
+    box-shadow: 0 0 35px #c38dffcc;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    animation: glitter 3.5s ease infinite;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+  #resume a:hover {
+    background: linear-gradient(135deg, #a089ff, #d4b3ff);
+    box-shadow: 0 0 50px #d4b3ffcc;
+  }
+
+  #contact p {
+    font-size: 1.3rem;
+    margin: 18px 0;
+    color: #bbb;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  footer {
+    background: #12121a;
+    color: #6666aa;
+    font-size: 1rem;
+    text-align: center;
+    padding: 22px 15px;
+    letter-spacing: 1.2px;
+    user-select: none;
+    font-weight: 400;
+    box-shadow: inset 0 1px 10px #3b2a9a;
+  }
+
+  @media (max-width: 650px) {
+    header h1 {
+      font-size: 2.8rem;
+    }
+    main {
+      margin: 30px 20px 70px;
+      padding: 40px 30px;
+    }
+    #about {
+      flex-direction: column;
+    }
+    #about p {
+      text-align: center;
+    }
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alex Smith</h1>
+  <p>Full-Stack Developer & Tech Enthusiast</p>
+</header>
+
+<main>
+  <section id="about">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Alex Smith" />
+    <p>
+      Hi, I’m Alex — a passionate full-stack developer with over 4 years of experience building sleek, performant web apps. I specialize in JavaScript frameworks, backend APIs, and crafting beautiful user experiences. When not coding, I dive into the latest tech trends and open-source projects.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>JavaScript (ES6+), TypeScript</li>
+      <li>Node.js, Express.js, MongoDB</li>
+      <li>React.js, Redux, Next.js</li>
+      <li>RESTful APIs & GraphQL</li>
+      <li>Docker & CI/CD Pipelines</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <strong>Task Manager Pro</strong>
+        <p>A responsive project management app with task tracking, collaboration tools, and real-time notifications.</p>
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80" alt="Task Manager Pro Screenshot" />
+      </li>
+      <li>
+        <strong>ShopEase E-Commerce</strong>
+        <p>Full-stack e-commerce website with user authentication, product catalog, and payment gateway integration.</p>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="ShopEase Screenshot" />
+      </li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="alex_smith_resume.pdf" download>Download Resume (PDF)</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: alex.smith@example.com</p>
+    <p>Phone: +1 (555) 123-4567</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Alex Smith. All rights reserved.
+</footer>
+
+</body>
+</html>
